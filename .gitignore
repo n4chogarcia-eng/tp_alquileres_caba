@@ -1,0 +1,18 @@
+# --- R / RStudio -------------------------------------------------------------
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+Rplots.pdf
+
+# --- macOS / Windows ---------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# --- Archivos temporales -----------------------------------------------------
+*~
+*.tmp
+
+# Archivos de bloqueo que crean Word/PowerPoint mientras el archivo esta abierto
+~$*

@@ -1,0 +1,12 @@
+variable,descripcion,tipo,valores_nulos,pct_nulos
+comuna,Comuna de la Ciudad de Buenos Aires (1 a 15),Categórica,0,0
+zona,"Agrupamiento geográfico de comunas: Norte, Centro, Oeste, Sur",Categórica,0,0
+ambientes,"Tipo de departamento: 1, 2 o 3 ambientes (usados)",Categórica ordinal,0,0
+superficie_m2,"Superficie de referencia del cuadro: 30, 43 o 70 m2",Numérica,0,0
+anio,Año del dato (2018 a 2026),Temporal,0,0
+trimestre,Trimestre del año (1 a 4),Temporal,0,0
+periodo,"Etiqueta año-trimestre, por ejemplo 2018-T1",Temporal,0,0
+precio_corriente,"Alquiler mensual promedio publicado, en pesos corrientes (dato original)",Numérica,199,13
+precio_real,Alquiler mensual en pesos constantes de 2026-T2 (deflactado por IPC),Numérica,199,13
+precio_m2_real,Precio real por metro cuadrado (precio_real / superficie_m2),Numérica,199,13
+precio_relativo,"Precio de la comuna como % del promedio de la Ciudad, mismo trimestre y tipo",Numérica,199,13
