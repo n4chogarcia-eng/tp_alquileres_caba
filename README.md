@@ -105,6 +105,16 @@ cada etapa toma como insumo la salida de la anterior.
 |---|---|---|
 | `01_exploratorio.R` | `output/tablas/`, `output/graficos/` | Dimensiones y unidad de observación, diccionario de variables, valores faltantes, descriptivas (`summary()` y `skim()`) por tipo de departamento y por comuna, tablas de frecuencia, histogramas, boxplots, percentiles y ratios entre percentiles, y correlaciones con sus diagramas de dispersión. |
 
+**Etapa 4 — Instancia 2: métodos estadísticos y cuantitativos** (`script/04 - instancia 2/`)
+
+| Script | Salida | Qué hace |
+|---|---|---|
+| `01_metodos.R` | `output/instancia2/` | Períodos regulatorios, tratamiento de faltantes y outliers, chi-cuadrado de independencia con V de Cramér y test apareado de Wilcoxon, índice real base 2018 = 100, índice de Theil con su descomposición, beta tipo CAPM por comuna, ANOVA de la beta por zona con sus supuestos y alternativas robustas, y correlaciones de Spearman. |
+| `02_graficos.R` | `output/graficos/i2_g*.png` | Los seis gráficos de la presentación de la instancia 2. |
+
+Todos los números de la presentación salen de los csv de `output/instancia2/`:
+no hay ninguno escrito a mano.
+
 ### Nota metodológica: corrección por inflación
 
 Entre 2018-T1 y 2026-T2 el IPC del GBA se multiplicó por casi 89. Cualquier
@@ -143,7 +153,8 @@ tp_alquileres_caba/
 ├── input/                        # Bases preprocesadas, en pesos corrientes (etapa 1)
 │   └── deflactados/              #   └─ En pesos constantes de 2026-T2 (etapa 2)
 ├── output/
-│   ├── tablas/                   # Tablas exportadas por los scripts (t01 a t17)
+│   ├── tablas/                   # Tablas de la instancia 1 (t01 a t19)
+│   ├── instancia2/               # Tablas de la instancia 2 (t01 a t22)
 │   └── graficos/                 # Gráficos exportados por los scripts (g01 a g07)
 ├── script/
 │   ├── 01 - crudo a preprocesado/
@@ -151,8 +162,11 @@ tp_alquileres_caba/
 │   │   └── 01_limpieza.R
 │   ├── 02 - preprocesado a deflactado/
 │   │   └── 01_deflactar_alquileres.R
-│   └── 03 - analisis exploratorio/
-│       └── 01_exploratorio.R
+│   ├── 03 - analisis exploratorio/
+│   │   └── 01_exploratorio.R
+│   └── 04 - instancia 2/
+│       ├── 01_metodos.R
+│       └── 02_graficos.R
 ├── utils/
 │   ├── leer_precios_comuna.R     # Lectura de los cuadros del Instituto
 │   ├── cambiar_indice_ipc.R      # De la cátedra
@@ -172,12 +186,17 @@ install.packages(c("tidyverse", "readxl", "skimr"))
 
 ### Orden de ejecución
 
-Parados en la carpeta del proyecto (`tp_alquileres_caba/`):
+Desde RStudio, abrir cada script y ejecutarlo completo (seleccionar todo y
+correr, o el botón *Source*). Cada script se ubica solo en la carpeta del
+proyecto, así que no hace falta cambiar el directorio de trabajo a mano. El
+orden es:
 
 1. `script/01 - crudo a preprocesado/00_ipc.R`
 2. `script/01 - crudo a preprocesado/01_limpieza.R`
 3. `script/02 - preprocesado a deflactado/01_deflactar_alquileres.R`
 4. `script/03 - analisis exploratorio/01_exploratorio.R`
+5. `script/04 - instancia 2/01_metodos.R`
+6. `script/04 - instancia 2/02_graficos.R`
 
 No hace falta ningún paso manual: los archivos crudos ya están versionados en
 `raw/` y `auxiliar/`.
@@ -218,3 +237,38 @@ las versiones nuevas, cambiar la fecha base en `00_ipc.R` y en
 La correlación entre el precio por m² de los tipos de departamento ilustra por
 qué hacía falta deflactar: da 1,00 con precios corrientes, 0,92 con precios
 constantes y 0,82 dentro de un solo trimestre.
+
+---
+
+## Instancia 2: métodos aplicados
+
+La segunda entrega reemplaza la hipótesis descriptiva de la primera por dos
+hipótesis con un mecanismo económico detrás, siguiendo la devolución del
+docente ("si no hacen algo que salga un poco del análisis de tendencias va a
+quedar corto el trabajo").
+
+**Hipótesis 1. El faltante como termómetro de la oferta.** Como la fuente solo
+publica una comuna si supera un mínimo de avisos, que el dato falte es una
+medida indirecta de la oferta publicada. Comparamos tres períodos: antes de la
+Ley 27.551, durante su vigencia y después de su derogación.
+
+- *Inferencia:* chi-cuadrado de independencia (χ² = 26,78; 2 gl; p < 0,001;
+  V de Cramér = 0,13), con el mismo test dentro de cada zona y un test apareado
+  de Wilcoxon por serie para cubrir el supuesto de independencia.
+- *Cuantitativo:* índice de precio real base 2018 = 100 e índice de Theil entre
+  comunas, con su descomposición entre zonas y dentro de zonas.
+
+**Hipótesis 2. El lujo amplifica el ciclo.** Para cada comuna-tipo estimamos
+una beta tipo CAPM: la pendiente de la regresión de su retorno real trimestral
+sobre el del resto del mercado del mismo tipo.
+
+- *Inferencia:* ANOVA de la beta por zona (F = 3,05; p = 0,042; η² = 0,21), que
+  no resiste las versiones robustas (Welch p = 0,113; Kruskal-Wallis p = 0,109),
+  y correlación de Spearman entre nivel de precio y beta (ρ = 0,47; p = 0,003).
+- *Cuantitativo:* beta, beta en subas y en caídas, volatilidad y amplitud del
+  ciclo por zona.
+
+Decisiones sobre faltantes y outliers: los faltantes se mantienen en la
+hipótesis 1 (son la variable de interés) y se completan con interpolación
+lineal de huecos de hasta 4 trimestres en la hipótesis 2, que necesita series
+completas. Los outliers (el pico real de 2023) se mantienen por ser genuinos.

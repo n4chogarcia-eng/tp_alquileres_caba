@@ -1,0 +1,5 @@
+zona,antes,ley,despues,p_valor,v,monte_carlo
+Norte,0,0.8,0,1,0.068,TRUE
+Centro,0,0.5,0,1,0.053,TRUE
+Oeste,2.2,8.7,0,0.0032,0.191,TRUE
+Sur,45.8,58.3,25.8,0,0.271,FALSE

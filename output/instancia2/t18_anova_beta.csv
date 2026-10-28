@@ -1,0 +1,7 @@
+test,estadistico,p_valor,tamano_efecto
+ANOVA (zona),3.05,0.0419,eta2 = 0.21
+ANOVA de Welch (zona),2.44,0.1129,
+Kruskal-Wallis (zona),6.05,0.1091,eps2 = 0.16
+ANOVA 2 factores: zona,4.1,0.0165,
+ANOVA 2 factores: tipo,0.16,0.8527,
+ANOVA 2 factores: interacción,3.24,0.0163,

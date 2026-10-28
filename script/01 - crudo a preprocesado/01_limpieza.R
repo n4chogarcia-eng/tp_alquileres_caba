@@ -20,13 +20,21 @@
 # 0. PAQUETES Y RUTAS
 # =============================================================================
 
+# Carpeta de trabajo: la del proyecto (la que tiene raw/, input/, script/...).
+# Si se corre desde RStudio (por ejemplo, seleccionando todo y ejecutando), R
+# se ubica solo: toma la carpeta donde está este script y sube dos niveles
+# (script/<etapa>/ -> carpeta del proyecto). Así funciona en cualquier
+# computadora, sin tener que cambiar ninguna ruta a mano.
+if (rstudioapi::isAvailable()) {
+  setwd(file.path(dirname(rstudioapi::getSourceEditorContext()$path), "..", ".."))
+}
+getwd()   # tiene que terminar en .../tp_alquileres_caba
+
 # install.packages(c("tidyverse", "readxl"))
 
 library(tidyverse)
 library(readxl)
 
-# El script se corre parado en la carpeta del proyecto (tp_alquileres_caba/).
-# En RStudio: Session > Set Working Directory > To Project Directory.
 
 
 # =============================================================================

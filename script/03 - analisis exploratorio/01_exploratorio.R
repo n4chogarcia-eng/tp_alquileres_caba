@@ -27,6 +27,16 @@
 # 0. PAQUETES Y CARGA DE LA BASE
 # =============================================================================
 
+# Carpeta de trabajo: la del proyecto (la que tiene raw/, input/, script/...).
+# Si se corre desde RStudio (por ejemplo, seleccionando todo y ejecutando), R
+# se ubica solo: toma la carpeta donde está este script y sube dos niveles
+# (script/<etapa>/ -> carpeta del proyecto). Así funciona en cualquier
+# computadora, sin tener que cambiar ninguna ruta a mano.
+if (rstudioapi::isAvailable()) {
+  setwd(file.path(dirname(rstudioapi::getSourceEditorContext()$path), "..", ".."))
+}
+getwd()   # tiene que terminar en .../tp_alquileres_caba
+
 # install.packages(c("tidyverse", "skimr"))
 
 library(tidyverse)
@@ -834,3 +844,67 @@ par(par_original)
 #    Es la oferta, no las operaciones cerradas.
 
 cat("\nListo. Tablas en output/tablas/ y gráficos en output/graficos/\n")
+
+
+# =============================================================================
+# 11. AGREGADOS A PARTIR DE LA DEVOLUCIÓN DE LA INSTANCIA 1
+# =============================================================================
+
+# El docente pidió tres cosas: reemplazar el análisis de correlación por una
+# tabla, ver si la evolución del precio fue igual en todas las zonas (y si hubo
+# rezagos) y mirar si las viviendas grandes se abarataron en unas comunas y en
+# otras no. Estas dos tablas son las que respondieron esas preguntas.
+
+# --- 11.1. Precio por m2 y prima del monoambiente, por comuna ----------------
+
+# Promedio de los últimos 4 trimestres contra el promedio de 2018.
+prima_comuna <- alquileres |>
+  filter(!is.na(precio_m2_real)) |>
+  mutate(tramo = case_when(anio == 2018 ~ "p2018",
+                           periodo >= "2025-T3" ~ "hoy",
+                           TRUE ~ NA_character_)) |>
+  filter(!is.na(tramo)) |>
+  group_by(comuna, zona, ambientes, tramo) |>
+  summarise(p_m2 = mean(precio_m2_real), .groups = "drop") |>
+  pivot_wider(names_from = c(tramo, ambientes), values_from = p_m2) |>
+  mutate(
+    prima_hoy  = 100 * (`hoy_1 ambiente` / `hoy_3 ambientes` - 1),
+    prima_2018 = 100 * (`p2018_1 ambiente` / `p2018_3 ambientes` - 1),
+    cambio_pp  = prima_hoy - prima_2018
+  ) |>
+  select(comuna, zona,
+         m2_1amb = `hoy_1 ambiente`, m2_2amb = `hoy_2 ambientes`,
+         m2_3amb = `hoy_3 ambientes`, prima_hoy, prima_2018, cambio_pp) |>
+  mutate(across(where(is.numeric), ~ round(.x, 1))) |>
+  arrange(desc(prima_hoy))
+
+print(prima_comuna, n = Inf)
+write_csv(prima_comuna, "output/tablas/t18_prima_por_comuna.csv")
+
+# Lectura: la prima del monoambiente no se movió igual en todas las comunas.
+# En la Comuna 1 creció 14,3 puntos (los departamentos grandes se abarataron
+# más que los chicos) y en Palermo se achicó 10,5.
+
+
+# --- 11.2. ¿Todas las zonas evolucionaron igual? -----------------------------
+
+# Índice base promedio 2018 = 100 por zona y tipo, sobre series completas.
+evol_zona <- alquileres |>
+  filter(!is.na(precio_m2_real), comuna != "8") |>
+  group_by(zona, ambientes, anio, trimestre, periodo) |>
+  summarise(p = mean(precio_m2_real), .groups = "drop") |>
+  group_by(zona, ambientes) |>
+  mutate(indice = 100 * p / mean(p[anio == 2018])) |>
+  summarise(
+    variacion_pct = round(mean(indice[periodo >= "2025-T3"]) - 100),
+    periodo_pico  = periodo[which.max(indice)],
+    .groups = "drop"
+  ) |>
+  pivot_wider(names_from = ambientes, values_from = c(variacion_pct, periodo_pico))
+
+print(evol_zona)
+write_csv(evol_zona, "output/tablas/t19_evolucion_por_zona.csv")
+
+# Lectura: las cuatro zonas tocaron el pico casi al mismo tiempo (2023-T3 o
+# 2023-T4), así que no hubo rezagos. Lo que cambia es cuánto perdieron: Norte y
+# Centro más que Oeste y Sur.

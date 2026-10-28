@@ -1,0 +1,103 @@
+ambientes,periodo,t,periodo_reg,indice
+1 ambiente,2018-T1,1,Antes de la ley,103.31130379075034
+1 ambiente,2018-T2,2,Antes de la ley,103.61004461925758
+1 ambiente,2018-T3,3,Antes de la ley,99.0824972388436
+1 ambiente,2018-T4,4,Antes de la ley,93.99615435114845
+1 ambiente,2019-T1,5,Antes de la ley,91.10187969534972
+1 ambiente,2019-T2,6,Antes de la ley,89.57275343047222
+1 ambiente,2019-T3,7,Antes de la ley,87.76990277789506
+1 ambiente,2019-T4,8,Antes de la ley,83.08226464677077
+1 ambiente,2020-T1,9,Antes de la ley,84.02947173477938
+1 ambiente,2020-T2,10,Antes de la ley,87.32848708486836
+1 ambiente,2020-T3,11,Ley de Alquileres,94.40053419067151
+1 ambiente,2020-T4,12,Ley de Alquileres,96.21601149102389
+1 ambiente,2021-T1,13,Ley de Alquileres,95.83148705082583
+1 ambiente,2021-T2,14,Ley de Alquileres,96.22089312896799
+1 ambiente,2021-T3,15,Ley de Alquileres,97.22833218270468
+1 ambiente,2021-T4,16,Ley de Alquileres,96.38246180561846
+1 ambiente,2022-T1,17,Ley de Alquileres,98.00661817155617
+1 ambiente,2022-T2,18,Ley de Alquileres,99.25089963673297
+1 ambiente,2022-T3,19,Ley de Alquileres,100.79711461629162
+1 ambiente,2022-T4,20,Ley de Alquileres,102.78366696752015
+1 ambiente,2023-T1,21,Ley de Alquileres,107.84124094393732
+1 ambiente,2023-T2,22,Ley de Alquileres,117.87471853017979
+1 ambiente,2023-T3,23,Ley de Alquileres,143.00507755853414
+1 ambiente,2023-T4,24,Ley de Alquileres,143.97191688460495
+1 ambiente,2024-T1,25,Después de la derogación,101.94348944872137
+1 ambiente,2024-T2,26,Después de la derogación,85.5950947662264
+1 ambiente,2024-T3,27,Después de la derogación,85.11365809775815
+1 ambiente,2024-T4,28,Después de la derogación,84.82803637532892
+1 ambiente,2025-T1,29,Después de la derogación,87.6186040941279
+1 ambiente,2025-T2,30,Después de la derogación,86.71195575398569
+1 ambiente,2025-T3,31,Después de la derogación,87.30553161933933
+1 ambiente,2025-T4,32,Después de la derogación,87.46064467912032
+1 ambiente,2026-T1,33,Después de la derogación,89.42159134801737
+1 ambiente,2026-T2,34,Después de la derogación,86.88661110352889
+2 ambientes,2018-T1,1,Antes de la ley,103.2790248981582
+2 ambientes,2018-T2,2,Antes de la ley,103.36134980292557
+2 ambientes,2018-T3,3,Antes de la ley,100.27919792586155
+2 ambientes,2018-T4,4,Antes de la ley,93.08042737305472
+2 ambientes,2019-T1,5,Antes de la ley,92.32151288679754
+2 ambientes,2019-T2,6,Antes de la ley,88.83295793443054
+2 ambientes,2019-T3,7,Antes de la ley,87.3237393544682
+2 ambientes,2019-T4,8,Antes de la ley,82.38648054393401
+2 ambientes,2020-T1,9,Antes de la ley,82.02916828288076
+2 ambientes,2020-T2,10,Antes de la ley,84.55559157853463
+2 ambientes,2020-T3,11,Ley de Alquileres,93.82210102528242
+2 ambientes,2020-T4,12,Ley de Alquileres,95.038022372157
+2 ambientes,2021-T1,13,Ley de Alquileres,95.14155198142527
+2 ambientes,2021-T2,14,Ley de Alquileres,97.39791632220376
+2 ambientes,2021-T3,15,Ley de Alquileres,97.83200938867252
+2 ambientes,2021-T4,16,Ley de Alquileres,97.60428842437533
+2 ambientes,2022-T1,17,Ley de Alquileres,98.9364470180965
+2 ambientes,2022-T2,18,Ley de Alquileres,102.24876603154306
+2 ambientes,2022-T3,19,Ley de Alquileres,101.83312319520059
+2 ambientes,2022-T4,20,Ley de Alquileres,100.35792796865078
+2 ambientes,2023-T1,21,Ley de Alquileres,104.88996478054096
+2 ambientes,2023-T2,22,Ley de Alquileres,116.69649714378617
+2 ambientes,2023-T3,23,Ley de Alquileres,145.32142315315167
+2 ambientes,2023-T4,24,Ley de Alquileres,148.84679540816973
+2 ambientes,2024-T1,25,Después de la derogación,103.72547449143906
+2 ambientes,2024-T2,26,Después de la derogación,86.55245726130352
+2 ambientes,2024-T3,27,Después de la derogación,86.87609993040172
+2 ambientes,2024-T4,28,Después de la derogación,87.69061407641836
+2 ambientes,2025-T1,29,Después de la derogación,88.79021088314093
+2 ambientes,2025-T2,30,Después de la derogación,89.41466340778173
+2 ambientes,2025-T3,31,Después de la derogación,90.21013214701442
+2 ambientes,2025-T4,32,Después de la derogación,89.27965817126515
+2 ambientes,2026-T1,33,Después de la derogación,90.16771403619555
+2 ambientes,2026-T2,34,Después de la derogación,88.30831131553703
+3 ambientes,2018-T1,1,Antes de la ley,105.64272101407319
+3 ambientes,2018-T2,2,Antes de la ley,103.97694956907185
+3 ambientes,2018-T3,3,Antes de la ley,98.03162787294826
+3 ambientes,2018-T4,4,Antes de la ley,92.34870154390667
+3 ambientes,2019-T1,5,Antes de la ley,89.28036611767027
+3 ambientes,2019-T2,6,Antes de la ley,85.36011604839878
+3 ambientes,2019-T3,7,Antes de la ley,83.71825887294067
+3 ambientes,2019-T4,8,Antes de la ley,78.0683284071443
+3 ambientes,2020-T1,9,Antes de la ley,79.16111091526157
+3 ambientes,2020-T2,10,Antes de la ley,80.90572530261208
+3 ambientes,2020-T3,11,Ley de Alquileres,91.33760764241165
+3 ambientes,2020-T4,12,Ley de Alquileres,96.34974893739718
+3 ambientes,2021-T1,13,Ley de Alquileres,95.97268476802694
+3 ambientes,2021-T2,14,Ley de Alquileres,97.8447989664434
+3 ambientes,2021-T3,15,Ley de Alquileres,99.89272073208745
+3 ambientes,2021-T4,16,Ley de Alquileres,100.92545652365497
+3 ambientes,2022-T1,17,Ley de Alquileres,102.24481972763593
+3 ambientes,2022-T2,18,Ley de Alquileres,101.56170409328453
+3 ambientes,2022-T3,19,Ley de Alquileres,99.39185640759865
+3 ambientes,2022-T4,20,Ley de Alquileres,98.78131273614152
+3 ambientes,2023-T1,21,Ley de Alquileres,108.10863166127105
+3 ambientes,2023-T2,22,Ley de Alquileres,117.0493914108522
+3 ambientes,2023-T3,23,Ley de Alquileres,136.41305100428937
+3 ambientes,2023-T4,24,Ley de Alquileres,150.8210579362413
+3 ambientes,2024-T1,25,Después de la derogación,103.46869863215854
+3 ambientes,2024-T2,26,Después de la derogación,86.53520627825142
+3 ambientes,2024-T3,27,Después de la derogación,86.93577037413466
+3 ambientes,2024-T4,28,Después de la derogación,88.56095113215132
+3 ambientes,2025-T1,29,Después de la derogación,89.98111939395444
+3 ambientes,2025-T2,30,Después de la derogación,88.30043195111891
+3 ambientes,2025-T3,31,Después de la derogación,89.48844015817542
+3 ambientes,2025-T4,32,Después de la derogación,89.77391779487745
+3 ambientes,2026-T1,33,Después de la derogación,89.84036758234119
+3 ambientes,2026-T2,34,Después de la derogación,89.09913023601487
