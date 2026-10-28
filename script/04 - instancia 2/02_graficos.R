@@ -165,3 +165,58 @@ box()
 dev.off()
 
 cat("\nGráficos guardados en", outstub, "\n")
+
+
+# =============================================================================
+# G7 y G8. Los dos gráficos que agregamos a partir de la devolución
+# =============================================================================
+
+# --- G7. La prima del monoambiente, hoy contra 2018 --------------------------
+
+prima <- read_csv("output/tablas/t18_prima_por_comuna.csv", show_col_types = FALSE) |>
+  filter(!is.na(prima_2018)) |>
+  arrange(cambio_pp)
+
+png(file.path(outstub, "i2_g07_prima_comuna.png"), width = 1000, height = 560)
+par(mar = c(5, 5, 4, 2))
+m <- rbind(prima$prima_2018, prima$prima_hoy)
+bp <- barplot(m, beside = TRUE, col = c(GRIS, AZUL), border = NA,
+              names.arg = paste("C", prima$comuna, sep = ""),
+              ylim = c(0, 26), las = 1,
+              main = "Cuánto más caro es el m² del monoambiente que el del 3 ambientes",
+              xlab = "Comuna", ylab = "Prima del monoambiente (%)")
+legend("topleft", legend = c("Promedio 2018", "Último año"),
+       fill = c(GRIS, AZUL), border = NA, bty = "n", cex = 1.05)
+box()
+dev.off()
+
+
+# --- G8. La evolución del precio real por zona -------------------------------
+
+ev <- read_csv("input/deflactados/alquileres_comunas.csv", show_col_types = FALSE) |>
+  filter(!is.na(precio_m2_real), comuna != 8, ambientes == "2 ambientes") |>
+  mutate(t = (anio - 2018) * 4 + trimestre) |>
+  group_by(zona, t) |>
+  summarise(p = mean(precio_m2_real), .groups = "drop") |>
+  group_by(zona) |>
+  mutate(indice = 100 * p / mean(p[t <= 4])) |>
+  ungroup()
+
+col_z <- c(Norte = AZUL, Centro = AZUL2, Oeste = OCRE, Sur = "#9B5A3C")
+
+png(file.path(outstub, "i2_g08_evolucion_zona.png"), width = 1000, height = 560)
+par(mar = c(5, 5, 4, 2))
+plot(NA, xlim = c(1, 34), ylim = c(80, 175), xaxt = "n",
+     main = "Alquiler real de un 2 ambientes por zona (promedio 2018 = 100)",
+     xlab = "", ylab = "Índice (2018 = 100)")
+abline(h = 100, lty = 3, col = GRIS)
+for (z in names(col_z)) {
+  d <- ev |> filter(zona == z) |> arrange(t)
+  lines(d$t, d$indice, lwd = 2.5, col = col_z[z])
+}
+axis(1, at = seq(1, 34, 4), labels = etiqueta_t(seq(1, 34, 4)), las = 2, cex.axis = 0.85)
+abline(v = 24, lty = 2, col = OCRE)
+text(24, 172, "pico 2023-T4", col = OCRE, pos = 2, cex = 0.95)
+legend("topleft", legend = names(col_z), col = col_z, lwd = 2.5, bty = "n", cex = 1.05)
+box()
+dev.off()
