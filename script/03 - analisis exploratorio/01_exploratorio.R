@@ -41,6 +41,7 @@ getwd()   # tiene que terminar en .../tp_alquileres_caba
 
 library(tidyverse)
 library(skimr)
+library(zoo)
 
 # Guardamos la configuración de gráficos original para poder volver a ella
 par_original <- par(no.readonly = TRUE)
@@ -889,10 +890,21 @@ write_csv(prima_comuna, "output/tablas/t18_prima_por_comuna.csv")
 # --- 11.2. ¿Todas las zonas evolucionaron igual? -----------------------------
 
 # Índice base promedio 2018 = 100 por zona y tipo, sobre series completas.
+# Criterio: completamos los huecos de hasta 4 trimestres con interpolación
+# lineal y nos quedamos solo con las series que así quedan completas. Si
+# dejáramos entrar a una comuna a mitad de camino, el promedio de la zona se
+# movería sin que hubiera cambiado ningún precio.
+# Con este criterio, en el Sur quedan las comunas 4, 7 y 9 en 2 ambientes y
+# solo la 7 en 1 y 3 ambientes.
 evol_zona <- alquileres |>
-  filter(!is.na(precio_m2_real), comuna != "8") |>
+  filter(comuna != "8") |>
+  group_by(comuna, ambientes) |>
+  arrange(anio, trimestre, .by_group = TRUE) |>
+  mutate(p_int = zoo::na.approx(precio_m2_real, maxgap = 4, na.rm = FALSE)) |>
+  filter(all(!is.na(p_int))) |>
+  ungroup() |>
   group_by(zona, ambientes, anio, trimestre, periodo) |>
-  summarise(p = mean(precio_m2_real), .groups = "drop") |>
+  summarise(p = mean(p_int), .groups = "drop") |>
   group_by(zona, ambientes) |>
   mutate(indice = 100 * p / mean(p[anio == 2018])) |>
   summarise(
