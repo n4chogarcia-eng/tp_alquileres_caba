@@ -1,0 +1,9 @@
+indicador,valor
+Series estimadas,38
+Betas significativas al 5%,38
+Betas significativas al 1%,38
+R2 mediano,0.8
+R2 mínimo,0.2
+"Sin autocorrelación (Durbin-Watson p > 0,05)",38
+"Varianza constante (Breusch-Pagan p > 0,05)",34
+"Residuos normales (Shapiro-Wilk p > 0,05)",33

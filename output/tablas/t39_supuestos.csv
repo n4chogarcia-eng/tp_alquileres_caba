@@ -1,0 +1,10 @@
+metodo,supuesto,como_lo_verificamos,resultado,veredicto
+Chi-cuadrado (H1),Frecuencias esperadas suficientes,Mínimo de la tabla de frecuencias esperadas,mínimo = 59 (se pide 5),Se cumple
+Chi-cuadrado (H1),Observaciones independientes,Los 34 trimestres de una misma serie no son independientes entre sí,Lo contrastamos con un Wilcoxon apareado: p = 0.0005,CONFLICTIVO
+ANOVA de la beta (H2),Normalidad de los residuos,Shapiro-Wilk sobre los residuos + QQ-plot (i2_g08_qqplot_anova.png),"W = 0.953, p = 0.111",Se cumple
+ANOVA de la beta (H2),Varianzas iguales entre zonas,Levene (Brown-Forsythe) + cociente entre el desvío mayor y el menor,"F = 1.07, p = 0.376; cociente = 2.10","Se cumple, con el cociente al límite"
+ANOVA de la beta (H2),Observaciones independientes,Las tres series de una misma comuna comparten los mismos shocks,Por eso reportamos también Welch y Kruskal-Wallis,CONFLICTIVO
+Regresión de la beta (H2),Residuos sin autocorrelación,Durbin-Watson en cada una de las regresiones,"38 de 38 series con p > 0,05",Se cumple
+Regresión de la beta (H2),Varianza constante de los residuos,Breusch-Pagan en cada una de las regresiones,"34 de 38 series con p > 0,05",Se cumple en la mayoría
+Regresión de la beta (H2),Normalidad de los residuos,Shapiro-Wilk en cada una de las regresiones,"33 de 38 series con p > 0,05",Se cumple en la mayoría
+Spearman (H2),No requiere normalidad ni linealidad,Trabaja sobre rangos; por eso lo elegimos en lugar de Pearson,Supuesto no aplicable,Se cumple

@@ -1,0 +1,5 @@
+zona,n,beta_sube,beta_baja,p_wilcoxon
+Norte,9,0.8,1.21,0.0039
+Centro,15,1.14,0.97,0.0353
+Oeste,9,0.81,0.94,0.1641
+Sur,5,1.02,0.93,0.8125

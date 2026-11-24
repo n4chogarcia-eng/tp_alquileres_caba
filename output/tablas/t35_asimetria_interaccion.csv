@@ -1,0 +1,11 @@
+muestra,zona,n_series,beta_subas,extra_bajas,p_valor
+Completa,Todas,38,0.93,0.07,0.133
+Completa,Norte,9,0.8,0.43,0
+Completa,Centro,15,1.11,-0.15,0.02
+Completa,Oeste,9,0.79,0.11,0.233
+Completa,Sur,5,0.88,-0.02,0.897
+Sin 2023,Todas,38,0.84,0.15,0.026
+Sin 2023,Norte,9,0.46,0.76,0
+Sin 2023,Centro,15,0.99,-0.02,0.851
+Sin 2023,Oeste,9,1.09,-0.2,0.204
+Sin 2023,Sur,5,0.7,0.18,0.391

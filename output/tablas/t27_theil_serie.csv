@@ -1,0 +1,103 @@
+ambientes,periodo,t,periodo_reg,theil,comunas
+1 ambiente,2018-T1,1,Antes de la ley,0.00480352402621429,12
+1 ambiente,2018-T2,2,Antes de la ley,0.005067681273778253,12
+1 ambiente,2018-T3,3,Antes de la ley,0.004159958735470199,12
+1 ambiente,2018-T4,4,Antes de la ley,0.004412187611090613,12
+1 ambiente,2019-T1,5,Antes de la ley,0.0044895884035805345,12
+1 ambiente,2019-T2,6,Antes de la ley,0.004507997283646721,12
+1 ambiente,2019-T3,7,Antes de la ley,0.005354657012050762,12
+1 ambiente,2019-T4,8,Antes de la ley,0.003573771489428208,12
+1 ambiente,2020-T1,9,Antes de la ley,0.003975128132310112,12
+1 ambiente,2020-T2,10,Antes de la ley,0.0036803875756076902,12
+1 ambiente,2020-T3,11,Ley de Alquileres,0.0017755571426018822,12
+1 ambiente,2020-T4,12,Ley de Alquileres,0.0018347082640061698,12
+1 ambiente,2021-T1,13,Ley de Alquileres,0.0014373560200677273,12
+1 ambiente,2021-T2,14,Ley de Alquileres,0.0029954518367790494,12
+1 ambiente,2021-T3,15,Ley de Alquileres,0.0013515848507384127,12
+1 ambiente,2021-T4,16,Ley de Alquileres,0.0017777210757575284,12
+1 ambiente,2022-T1,17,Ley de Alquileres,0.0019557280985901624,12
+1 ambiente,2022-T2,18,Ley de Alquileres,0.004986578325591354,12
+1 ambiente,2022-T3,19,Ley de Alquileres,0.0021626146713711854,12
+1 ambiente,2022-T4,20,Ley de Alquileres,0.002072954813874966,12
+1 ambiente,2023-T1,21,Ley de Alquileres,0.0030164204540765547,12
+1 ambiente,2023-T2,22,Ley de Alquileres,0.0030341988346619326,12
+1 ambiente,2023-T3,23,Ley de Alquileres,0.005535426163063946,12
+1 ambiente,2023-T4,24,Ley de Alquileres,0.0062087956182921185,12
+1 ambiente,2024-T1,25,Después de la derogación,0.005844684003260457,12
+1 ambiente,2024-T2,26,Después de la derogación,0.003582906489075172,12
+1 ambiente,2024-T3,27,Después de la derogación,0.0021879520521535687,12
+1 ambiente,2024-T4,28,Después de la derogación,0.002087877721875648,12
+1 ambiente,2025-T1,29,Después de la derogación,0.0014269515129717416,12
+1 ambiente,2025-T2,30,Después de la derogación,0.00177332868774435,12
+1 ambiente,2025-T3,31,Después de la derogación,0.00208418620598501,12
+1 ambiente,2025-T4,32,Después de la derogación,0.002194742689337237,12
+1 ambiente,2026-T1,33,Después de la derogación,0.002089489766236797,12
+1 ambiente,2026-T2,34,Después de la derogación,0.0017656079089592167,12
+2 ambientes,2018-T1,1,Antes de la ley,0.0069613224322229005,14
+2 ambientes,2018-T2,2,Antes de la ley,0.008673394439922915,14
+2 ambientes,2018-T3,3,Antes de la ley,0.006938531287511969,14
+2 ambientes,2018-T4,4,Antes de la ley,0.0049065208836650415,14
+2 ambientes,2019-T1,5,Antes de la ley,0.006252452848608182,14
+2 ambientes,2019-T2,6,Antes de la ley,0.005900046640132134,14
+2 ambientes,2019-T3,7,Antes de la ley,0.005603579886792026,14
+2 ambientes,2019-T4,8,Antes de la ley,0.005018938112579842,14
+2 ambientes,2020-T1,9,Antes de la ley,0.004186328476338579,14
+2 ambientes,2020-T2,10,Antes de la ley,0.0053606841817148785,14
+2 ambientes,2020-T3,11,Ley de Alquileres,0.004336890155399167,14
+2 ambientes,2020-T4,12,Ley de Alquileres,0.00351293227701251,14
+2 ambientes,2021-T1,13,Ley de Alquileres,0.004125661367591434,14
+2 ambientes,2021-T2,14,Ley de Alquileres,0.004910514811573261,14
+2 ambientes,2021-T3,15,Ley de Alquileres,0.0037421820933154527,14
+2 ambientes,2021-T4,16,Ley de Alquileres,0.002778238761163298,14
+2 ambientes,2022-T1,17,Ley de Alquileres,0.0045390417050763555,14
+2 ambientes,2022-T2,18,Ley de Alquileres,0.006999212271373017,14
+2 ambientes,2022-T3,19,Ley de Alquileres,0.008033584661402134,14
+2 ambientes,2022-T4,20,Ley de Alquileres,0.005104523783306126,14
+2 ambientes,2023-T1,21,Ley de Alquileres,0.010804415443665269,14
+2 ambientes,2023-T2,22,Ley de Alquileres,0.011528361655514933,14
+2 ambientes,2023-T3,23,Ley de Alquileres,0.007939524360686154,14
+2 ambientes,2023-T4,24,Ley de Alquileres,0.013584658306893085,14
+2 ambientes,2024-T1,25,Después de la derogación,0.005937095911945217,14
+2 ambientes,2024-T2,26,Después de la derogación,0.005215955148675764,14
+2 ambientes,2024-T3,27,Después de la derogación,0.003449379626565328,14
+2 ambientes,2024-T4,28,Después de la derogación,0.003054936597089667,14
+2 ambientes,2025-T1,29,Después de la derogación,0.0032621303020097664,14
+2 ambientes,2025-T2,30,Después de la derogación,0.0029019821672868823,14
+2 ambientes,2025-T3,31,Después de la derogación,0.0027392751068224686,14
+2 ambientes,2025-T4,32,Después de la derogación,0.0026938509737636455,14
+2 ambientes,2026-T1,33,Después de la derogación,0.003959998296219219,14
+2 ambientes,2026-T2,34,Después de la derogación,0.003248994524647118,14
+3 ambientes,2018-T1,1,Antes de la ley,0.006422335262500795,12
+3 ambientes,2018-T2,2,Antes de la ley,0.0037417945016107717,12
+3 ambientes,2018-T3,3,Antes de la ley,0.003657848143422281,12
+3 ambientes,2018-T4,4,Antes de la ley,0.0035547345249064537,12
+3 ambientes,2019-T1,5,Antes de la ley,0.0047484699915918485,12
+3 ambientes,2019-T2,6,Antes de la ley,0.0041316251025017535,12
+3 ambientes,2019-T3,7,Antes de la ley,0.005123902478377674,12
+3 ambientes,2019-T4,8,Antes de la ley,0.004286958017538809,12
+3 ambientes,2020-T1,9,Antes de la ley,0.0060421254685117925,12
+3 ambientes,2020-T2,10,Antes de la ley,0.007805423127912435,12
+3 ambientes,2020-T3,11,Ley de Alquileres,0.0069626858118397045,12
+3 ambientes,2020-T4,12,Ley de Alquileres,0.0062111047543482525,12
+3 ambientes,2021-T1,13,Ley de Alquileres,0.0055343658693733574,12
+3 ambientes,2021-T2,14,Ley de Alquileres,0.006368848721449501,12
+3 ambientes,2021-T3,15,Ley de Alquileres,0.00425421034977982,12
+3 ambientes,2021-T4,16,Ley de Alquileres,0.0050743004059684346,12
+3 ambientes,2022-T1,17,Ley de Alquileres,0.004500191220574554,12
+3 ambientes,2022-T2,18,Ley de Alquileres,0.004678578300962595,12
+3 ambientes,2022-T3,19,Ley de Alquileres,0.004159673911662554,12
+3 ambientes,2022-T4,20,Ley de Alquileres,0.008680728060884019,12
+3 ambientes,2023-T1,21,Ley de Alquileres,0.006704797307094255,12
+3 ambientes,2023-T2,22,Ley de Alquileres,0.007357197694988323,12
+3 ambientes,2023-T3,23,Ley de Alquileres,0.009007723831281582,12
+3 ambientes,2023-T4,24,Ley de Alquileres,0.01740971059554601,12
+3 ambientes,2024-T1,25,Después de la derogación,0.005444162720122906,12
+3 ambientes,2024-T2,26,Después de la derogación,0.004763643471219227,12
+3 ambientes,2024-T3,27,Después de la derogación,0.003843952272019331,12
+3 ambientes,2024-T4,28,Después de la derogación,0.0033849266524421297,12
+3 ambientes,2025-T1,29,Después de la derogación,0.0017336968452204681,12
+3 ambientes,2025-T2,30,Después de la derogación,0.003322183096288062,12
+3 ambientes,2025-T3,31,Después de la derogación,0.003769502791295772,12
+3 ambientes,2025-T4,32,Después de la derogación,0.004237561106497761,12
+3 ambientes,2026-T1,33,Después de la derogación,0.005602889565468058,12
+3 ambientes,2026-T2,34,Después de la derogación,0.005804592710646053,12
